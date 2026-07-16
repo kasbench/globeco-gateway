@@ -1,0 +1,20 @@
+# Add the Gateway API CRDs
+
+>kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.6.0/standard-install.yaml
+
+# Install Envoy
+
+>helm install eg oci://docker.io/envoyproxy/gateway-helm --version v1.8.2 -n envoy-gateway-system --create-namespace
+
+# Wait for it to become available
+
+>kubectl wait --timeout=5m -n envoy-gateway-system deployment/envoy-gateway --for=condition=Available
+
+# Apply manifests
+gateway-class.yaml
+envoy-proxy-nodeport-patch.yaml
+gateway.yaml
+httproutes.yaml
+
+
+
