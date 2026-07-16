@@ -1,6 +1,6 @@
-# Add the Gateway API CRDs
+# Add the Gateway API CRDs (Not required, included in Helm install)
 
->kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.6.0/standard-install.yaml
+# >kubectl apply --server-side -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.6.0/standard-install.yaml
 
 # Install Envoy
 
